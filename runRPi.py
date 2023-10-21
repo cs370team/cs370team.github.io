@@ -16,12 +16,12 @@ def run():
 	
 	while (True):
 		seconds = floor(time())
+		if (seconds % 60*60 == 0):
+			os.system("push.sh")
 		if (seconds % interval == 0):
 			reading = [seconds, sensor1.reading(), sensor2.reading()]
 			with open('data.csv', 'a') as log:
 				writer = csv.writer(log, dialect='excel')
 				writer.writerow(reading)
 			sleep(1.5)
-			os.system("push.sh")
-
 run()
