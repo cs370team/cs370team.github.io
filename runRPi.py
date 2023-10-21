@@ -3,7 +3,7 @@ from time import time, sleep
 from math import floor
 import csv
 
-interval = 5
+interval = 10 #delay between sensor readings in seconds
 
 def run():
 	sensor1 = Sensor(15, 21)
