@@ -42,7 +42,7 @@ def get_suggested_action(current_moisture): #TODO make this dynamic
     elif (current_moisture == 'high'):
         return "don't water the lawn"
 
-def make_html():
+def update_html():
     trend_png, current_moisture = get_moisture_data()
     action = get_suggested_action(current_moisture)
 
@@ -54,11 +54,3 @@ def make_html():
         site.write(tag("br"))
         site.write(tag("p", f"Current moisture content: {current_moisture}"))
         site.write(tag("p", f"Suggested action: {action}"))
-
-with open('sample_data/data.csv', 'a') as f:
-  f.write(f"{time.time()}, 0,0\n")
-make_html()
-
-with open('index.html', 'r') as f:
-  for line in f:
-    print(line)
