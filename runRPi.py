@@ -16,7 +16,7 @@ def run():
 	
 	while (True):
 		seconds = floor(time())
-		if (seconds % 60*60 == 0):
+		if (seconds % 60 == 10):
 			os.system("push.sh")
 		if (seconds % interval == 0):
 			reading = [seconds, sensor1.reading(), sensor2.reading()]
