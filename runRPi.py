@@ -6,7 +6,7 @@ import csv
 import os
 
 
-interval = 10*60 #delay between sensor readings in seconds
+interval = 30*60 #delay between sensor readings in seconds
 
 def run():
 	sensor1 = Sensor(15, 21)
@@ -19,7 +19,7 @@ def run():
 			with open('data.csv', 'a') as log:
 				writer = csv.writer(log, dialect='excel')
 				writer.writerow(reading)
-			os.system("push.sh") #This can't happen too frequently or we'll run into issues both with github and with readings getting lost
+			# os.system("push.sh") #This can't happen too frequently or we'll run into issues both with github and with readings getting lost
 			sleep(1)
 
 run()
