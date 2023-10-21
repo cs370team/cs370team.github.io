@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
 import datetime
 import numpy as np
 
@@ -10,15 +11,14 @@ def make_trend_png():
     X = [datetime.datetime.fromtimestamp(x) for x in X]
     y = 1-np.average(data[max(-168,-len(data)):,1:], axis=1)
 
-    fig = plt.figure(figsize=(15, 2))
+    fig = plt.figure(figsize=(10, 2))
 
     plt.scatter(X,y, alpha=.5)
 
-    plt.plot(X, np.array([.75]*len(X)), "--b", label="over-saturation")
-    plt.plot(X, np.array([.25]*len(X)), '--r', label="")
+    plt.plot(X, np.array([.75]*len(X)), "--b")
+    plt.plot(X, np.array([.25]*len(X)), '--r')
 
     current_values = plt.gca().get_yticks()
-    print(current_values)
     plt.gca().set_yticklabels(["", "too-dry", "ideal", "too-wet", ""])
 
     plt.gcf().autofmt_xdate()
@@ -45,4 +45,4 @@ def make_html():
         site.write(tag("p", f"Suggested action: {action}"))
 
 
-make_html()
+make_html()   
