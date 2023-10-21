@@ -13,7 +13,6 @@ def run():
 		seconds = floor(time())
 		if (seconds % interval == 0):
 			reading = [seconds, sensor1.reading(), sensor2.reading()]
-			print(reading)
 			with open('data.csv', 'a') as log:
 				writer = csv.writer(log, dialect='excel')
 				writer.writerow(reading)
