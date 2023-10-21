@@ -1,5 +1,5 @@
-# from sensor import Sensor
 from sensorSimulator import Sensor
+# from sensor import Sensor
 from time import time, sleep
 from math import floor
 import csv
