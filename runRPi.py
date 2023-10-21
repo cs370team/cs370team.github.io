@@ -6,7 +6,7 @@ import csv
 import os
 
 
-interval = 60*5 #delay between sensor readings in seconds
+interval = 30 #delay between sensor readings in seconds
 
 def run():
 	# sensor1 = Sensor(15, 21)
