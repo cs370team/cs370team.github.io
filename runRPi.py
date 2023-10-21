@@ -1,3 +1,4 @@
+from format_index import update_html
 from sensorSimulator import Sensor
 # from sensor import Sensor
 from time import time, sleep
@@ -19,7 +20,8 @@ def run():
 			with open('data.csv', 'a') as log:
 				writer = csv.writer(log, dialect='excel')
 				writer.writerow(reading)
-			# os.system("push.sh") #This can't happen too frequently or we'll run into issues both with github and with readings getting lost
+			update_html()
 			sleep(1)
+			os.system("push.sh") #This can't happen too frequently or we'll run into issues both with github and with readings getting lost
 
 run()
