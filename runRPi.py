@@ -1,4 +1,5 @@
-from sensor import Sensor
+# from sensor import Sensor
+from sensorSimulator import Sensor
 from time import time, sleep
 from math import floor
 import csv
@@ -6,6 +7,8 @@ import csv
 interval = 10 #delay between sensor readings in seconds
 
 def run():
+	# sensor1 = Sensor(15, 21)
+	# sensor2 = Sensor(2, 27)
 	sensor1 = Sensor(15, 21)
 	sensor2 = Sensor(2, 27)
 	
