@@ -21,7 +21,9 @@ def run():
 				writer = csv.writer(log, dialect='excel')
 				writer.writerow(reading)
 			update_html()
-			sleep(1)
 			os.system("push.sh") #This can't happen too frequently or we'll run into issues both with github and with readings getting lost
+			sleep(1)
 
-run()
+
+if (__name__ == "__main__"):
+	run()
