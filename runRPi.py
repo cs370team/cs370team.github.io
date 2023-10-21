@@ -19,7 +19,7 @@ def run():
 			with open('data.csv', 'a') as log:
 				writer = csv.writer(log, dialect='excel')
 				writer.writerow(reading)
-			os.system("push.sh") #can't happen too frequently or we'll run into issues both with github and with readings getting lost
+			os.system("push.sh") #This can't happen too frequently or we'll run into issues both with github and with readings getting lost
 			sleep(1)
 
 run()
