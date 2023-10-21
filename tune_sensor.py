@@ -23,7 +23,7 @@ def run():
 		if (seconds % interval == 0):
 			reading = getReading()
 			print(reading, seconds)
-			with open('data.csv', 'a') as log:
+			with open('data1.csv', 'a') as log:
 				writer = csv.writer(log, dialect='excel')
 				writer.writerow([reading, seconds])
 			sleep(1.5)
