@@ -1,6 +1,7 @@
 import RPi.GPIO as GPIO
 from time import time, sleep
 from math import floor
+import csv
 
 def setup():
 	GPIO.setmode(GPIO.BCM)
@@ -16,15 +17,16 @@ def getReading():
 
 def run():
 	setup()
-	interval = 5
+	interval = 10
 	while(True):
 		seconds = floor(time())
 		if (seconds % interval == 0):
 			reading = getReading()
 			print(reading, seconds)
-			with open('log.txt', 'a') as log:
-				log.write(f'{reading}\t{seconds}\n')
-			sleep(1)
+			with open('data.csv', 'a') as log:
+				writer = csv.writer(log, dialect='excel')
+				writer.writerow([reading, seconds])
+			sleep(1.5)
 	
 	GPIO.cleanup()
 
