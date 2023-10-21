@@ -1,11 +1,5 @@
-#on outside pin row
-
 import RPi.GPIO as GPIO
-from time import time, sleep
-from math import floor
-import csv
-
-pins = [15, 21]
+from time import sleep
 
 class Sensor:
 	def __init__(self, power, sensor):
@@ -17,7 +11,7 @@ class Sensor:
 
 	def reading(self):
 		GPIO.output(self.power, GPIO.HIGH)
-		sleep(.05)
+		sleep(.02)
 		reading = GPIO.input(self.sensor)
 		GPIO.output(self.power, GPIO.LOW)
 		return reading
