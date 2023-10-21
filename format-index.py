@@ -45,4 +45,4 @@ def make_html():
         site.write(tag("p", f"Suggested action: {action}"))
 
 
-make_html()   
+make_html()
