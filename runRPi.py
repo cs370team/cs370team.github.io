@@ -3,6 +3,8 @@ from sensorSimulator import Sensor
 from time import time, sleep
 from math import floor
 import csv
+import os
+
 
 interval = 10 #delay between sensor readings in seconds
 
@@ -20,5 +22,6 @@ def run():
 				writer = csv.writer(log, dialect='excel')
 				writer.writerow(reading)
 			sleep(1.5)
+			os.system("push.sh")
 
 run()
