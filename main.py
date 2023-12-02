@@ -22,7 +22,7 @@ def run():
 				writer.writerow(reading)
 			update_html()
 			#add full path if push.sh not found
-			os.system("push.sh") #This can't happen too frequently or we'll run into issues both with github and with readings getting lost
+			os.system("/home/acyo/Desktop/Project/cs370team.github.io/push.sh") #This can't happen too frequently or we'll run into issues both with github and with readings getting lost
 			sleep(1)
 
 
