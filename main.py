@@ -21,7 +21,7 @@ def run():
 				writer = csv.writer(log, dialect='excel')
 				writer.writerow(reading)
 			update_html()
-			os.system("push.sh") #This can't happen too frequently or we'll run into issues both with github and with readings getting lost
+			os.system("/Users/lukaselerson/Documents/cs370/project/cs370team.github.io/push.sh") #This can't happen too frequently or we'll run into issues both with github and with readings getting lost
 			sleep(1)
 
 
