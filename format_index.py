@@ -36,12 +36,12 @@ def get_moisture_data():
         data = list(reader)
 
     X = [datetime.datetime.fromtimestamp(float(row[0])) for row in data[-346:]]
-    y = 1 - sum(float(row[1]) for row in data[-168:]) / 168
+    y = [1 - (int(row[1]) + int(row[2])) / 2.0 for row in data]
 
     fig = plt.figure(figsize=(10, 2))
     fig.gca().yaxis.set(ticks=[-0.5, 0, 0.5, 1, 1.5])
 
-    plt.scatter(X, [y] * len(X), alpha=0.5)
+    plt.scatter(X,y, alpha=0.5)
 
     plt.plot(X, [0.75] * len(X), "--b")
     plt.plot(X, [0.25] * len(X), '--r')
@@ -54,7 +54,7 @@ def get_moisture_data():
     plt.gcf().autofmt_xdate()
 
     plt.savefig('moisture-trend.png')
-    current_moisture = ("low", "optimal", 'high')[int(2 * y)]
+    current_moisture = ("low", "optimal", 'high')[int(2 * y[-1])]
     return 'moisture-trend.png', current_moisture
 
 def tag(tag, text="", options=""):
@@ -80,3 +80,5 @@ def update_html():
         site.write(tag("br"))
         site.write(tag("p", f"Current moisture content: {current_moisture}"))
         site.write(tag("p", f"Suggested action: {action}"))
+
+update_html()
