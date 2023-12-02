@@ -49,7 +49,7 @@ def get_moisture_data():
     current_values = plt.gca().get_yticks()
 
     plt.ylim((-0.25, 1.25))
-    plt.gca().set_yticklabels(["too-dry" if x == 0 else ("optimal" if x == 0.5 else ("too-wet" if x == 1 else "")) for x in current_values])
+    plt.gca().set_yticklabels(["too-dry" if y == 0 else ("optimal" if y == 0.5 else ("too-wet" if y == 1 else "")) for y in current_values])
 
     plt.gcf().autofmt_xdate()
 
