@@ -8,7 +8,7 @@ def lawn_notification():
     # Need to replace empty strings with info for emails
     sender_email = 'cs370lawnnotification@gmail.com'
     sender_password = 'dcnm btut dtfb rqkn'
-    receiver_email = 'luke.elerson@yahoo.com'
+    receiver_email = 'ayoungren94@gmail.com'
     lawn_reminder = "Lawn upkeep reminder: Check lawn height. Mow to 1/3 of grass height if lawn has grown to 6'' or more.\n"
 
     # This creates the object that represents the email we're sending
