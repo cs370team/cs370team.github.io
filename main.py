@@ -1,6 +1,6 @@
 from format_index import update_html
-#from sensorSimulator import Sensor
-from sensor import Sensor
+from sensorSimulator import Sensor
+# from sensor import Sensor
 from time import time, sleep
 from math import floor
 import csv
@@ -22,7 +22,7 @@ def run():
 				writer.writerow(reading)
 			update_html()
 			#add full path if push.sh not found
-			os.system("/home/acyo/Desktop/Project/cs370team.github.io/push.sh") #This can't happen too frequently or we'll run into issues both with github and with readings getting lost
+			os.system("/Users/lukaselerson/Documents/cs370/cs370team.github.io/push.sh") #This can't happen too frequently or we'll run into issues both with github and with readings getting lost
 			sleep(1)
 
 
