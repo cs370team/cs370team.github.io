@@ -9,6 +9,7 @@ import os
 
 
 interval = 60 #delay between sensor readings in seconds
+#interval = 28800
 push_path = "/home/acyo/Desktop/Project/cs370team.github.io/push.sh"
 
 def run():

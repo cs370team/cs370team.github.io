@@ -39,7 +39,7 @@ def get_suggested_action(current_moisture): #TODO make this dynamic
         moisture_notification()
         return " The Plant/Lawn Needs Watering"
     elif (current_moisture == 'optimal'):
-        return " Water if the Temperature is 80-Degrees Farenheit. Outside Plants or Lawn Only."
+        return " Water if the Temperature is 80-Degrees Farenheit or More (\Outside Plants or Lawn Only)\."
     elif (current_moisture == 'high'):
         return " Do not water Lawn/Plants"
 
@@ -48,7 +48,7 @@ def update_html():
     action = get_suggested_action(current_moisture)
 
     with open('index.html', 'w') as site:
-        site.write(tag("h", "Lawn Moisture Monitor"))
+        site.write(tag("h", "Soil Moisture Monitor"))
         site.write(tag("br"))
         site.write(tag("h4", "48-Hour Moisture Trend:"))
         site.write(tag("img", options=f"src=\"{trend_png}\""))
