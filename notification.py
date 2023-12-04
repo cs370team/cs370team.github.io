@@ -48,7 +48,7 @@ def lawn_notification():
     if datetime.datetime.now() - last_notification_date >= datetime.timedelta(weeks=1):
         sender_email = 'cs370lawnnotification@gmail.com'
         sender_password = 'dcnm btut dtfb rqkn'
-        receiver_email = 'luke.elerson@yahoo.com'
+        receiver_email = 'ayoungren94@gmail.com'
         email_content = f"{LAWN_REMINDER}\n{LINK_TO_SITE}\n\n" + "\n".join(ARTICLE_LIST)
 
         # This creates the object that represents the email we're sending
