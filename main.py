@@ -25,7 +25,7 @@ def run():
 			update_html()
 			lawn_notification()
 			#add full path if push.sh not found
-			os.system("/Users/lukaselerson/Documents/cs370/cs370team.github.io/push.sh") #This can't happen too frequently or we'll run into issues both with github and with readings getting lost
+			os.system(push_path) #This can't happen too frequently or we'll run into issues both with github and with readings getting lost
 			sleep(1)
 
 
