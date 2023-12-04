@@ -35,7 +35,7 @@ def tag(tag, text="", options=""):
     return f"<{tag} {options}>"+text+f"</{tag}>"
 
 def get_suggested_action(current_moisture): #TODO make this dynamic
-    moisture_notification()
+    #moisture_notification()
     if (current_moisture == 'low'):
         moisture_notification()
         return " The Plant/Lawn Needs Watering"
@@ -49,7 +49,7 @@ def update_html():
     action = get_suggested_action(current_moisture)
 
     with open('index.html', 'w') as site:
-        site.write(tag("h", "Soil Moisture Monitor"))
+        site.write(tag("h1", "Soil Moisture Monitor"))
         site.write(tag("br"))
         site.write(tag("h4", "48-Hour Moisture Trend:"))
         site.write(tag("img", options=f"src=\"{trend_png}\""))
