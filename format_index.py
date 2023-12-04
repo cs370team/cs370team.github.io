@@ -51,7 +51,8 @@ def update_html():
     with open('index.html', 'w') as site:
         site.write(tag("h1", "Soil Moisture Monitor"))
         site.write(tag("br"))
-        site.write(tag("h4", "48-Hour Moisture Trend:"))
+        site.write(tag("h4", "7-Day Moisture Trend:"))
+        site.write(tag("p", f"If less than 7 days of data, the graph will reflect back to the first day of data."))
         site.write(tag("img", options=f"src=\"{trend_png}\""))
         site.write(tag("br"))
         site.write(tag("p", f"Current Moisture Content: {current_moisture}"))
