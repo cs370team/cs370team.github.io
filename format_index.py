@@ -22,7 +22,7 @@ def get_moisture_data():
     current_values = plt.gca().get_yticks()
 
     plt.ylim((-0.25, 1.25))
-    plt.gca().set_yticklabels(["too-dry" if y == 0 else ("optimal" if y == 0.5 else ("too-wet" if y == 1 else "")) for y in current_values])
+    plt.gca().set_yticklabels(["Too-Dry" if y == 0 else ("Optimal" if y == 0.5 else ("Too-Wet" if y == 1 else "")) for y in current_values])
 
     plt.gcf().autofmt_xdate()
 
@@ -35,23 +35,23 @@ def tag(tag, text="", options=""):
 
 def get_suggested_action(current_moisture): #TODO make this dynamic
     if (current_moisture == 'low'):
-        return "water the lawn"
+        return " The Plant/Lawn Needs Watering"
     elif (current_moisture == 'optimal'):
-        return "water if sunny"
+        return " Water if the Temperature is 80-Degrees Farenheit. Outside Plants or Lawn Only."
     elif (current_moisture == 'high'):
-        return "don't water the lawn"
+        return " Do not water Lawn/Plants"
 
 def update_html():
     trend_png, current_moisture = get_moisture_data()
     action = get_suggested_action(current_moisture)
 
     with open('index.html', 'w') as site:
-        site.write(tag("h", "Lawn moisture monitor"))
+        site.write(tag("h", "Lawn Moisture Monitor"))
         site.write(tag("br"))
-        site.write(tag("h4", "last weeks trend:"))
+        site.write(tag("h4", "48-Hour Moisture Trend:"))
         site.write(tag("img", options=f"src=\"{trend_png}\""))
         site.write(tag("br"))
-        site.write(tag("p", f"Current moisture content: {current_moisture}"))
-        site.write(tag("p", f"Suggested action: {action}"))
+        site.write(tag("p", f"Current Moisture Content: {current_moisture}"))
+        site.write(tag("p", f"Suggested Action: {action}"))
 
 update_html()
