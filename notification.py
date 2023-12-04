@@ -41,7 +41,7 @@ def write_last_notification_date(file_path, date_time):
 def send_notification(email_content):
     sender_email = 'cs370lawnnotification@gmail.com'
     sender_password = 'dcnm btut dtfb rqkn'
-    receiver_email = 'luke.elerson@yahoo.com'
+    receiver_email = 'ayoungren94@gmail.com'
 
 
     # This creates the object that represents the email we're sending
