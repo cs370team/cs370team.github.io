@@ -1,3 +1,4 @@
+from notification import moisture_notification
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import datetime
@@ -35,6 +36,7 @@ def tag(tag, text="", options=""):
 
 def get_suggested_action(current_moisture): #TODO make this dynamic
     if (current_moisture == 'low'):
+        moisture_notification()
         return " The Plant/Lawn Needs Watering"
     elif (current_moisture == 'optimal'):
         return " Water if the Temperature is 80-Degrees Farenheit. Outside Plants or Lawn Only."

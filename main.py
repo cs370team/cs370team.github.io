@@ -1,7 +1,7 @@
 from format_index import update_html
-from sensorSimulator import Sensor
+# from sensorSimulator import Sensor
 from notification import lawn_notification
-# from sensor import Sensor
+from sensor import Sensor
 from time import time, sleep
 from math import floor
 import csv
