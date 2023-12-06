@@ -15,7 +15,7 @@ def get_moisture_data():
     fig = plt.figure(figsize=(10, 6))
     fig.gca().yaxis.set(ticks=[-0.5, 0, 0.5, 1, 1.5])
 
-    plt.scatter(X,y, alpha=0.5)
+    plt.scatter(X,y, alpha=0.15)
 
     plt.plot(X, [0.75] * len(X), "--b")
     plt.plot(X, [0.25] * len(X), '--r')
