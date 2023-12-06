@@ -25,7 +25,7 @@ def get_moisture_data():
     plt.ylim((-0.25, 1.25))
     plt.gca().set_yticklabels(["Too-Dry" if y == 0 else ("Optimal" if y == 0.5 else ("Too-Wet" if y == 1 else "")) for y in current_values])
     plt.gcf().autofmt_xdate()
-    plt.subplots_adjust(bottom=.15)
+    plt.subplots_adjust(bottom=.005)
 
     plt.savefig('moisture-trend.png')
     current_moisture = ("low", "optimal", 'high')[int(2 * y[-1])]
@@ -35,7 +35,7 @@ def tag(tag, text="", options=""):
     return f"<{tag} {options}>"+text+f"</{tag}>"
 
 def get_suggested_action(current_moisture): #TODO make this dynamic
-    #moisture_notification()
+    #moisture_notification() #For the demo
     if (current_moisture == 'low'):
         moisture_notification()
         return " The Plant/Lawn Needs Watering"

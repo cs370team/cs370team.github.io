@@ -8,8 +8,9 @@ import csv
 import os
 
 
-interval = 60 #delay between sensor readings in seconds
-#interval = 28800
+#interval = 60 #delay between sensor readings in seconds (demo time, every minute)
+
+interval = 28800 #delay between sensor readings in seconds (every 8 hours)
 push_path = "/home/acyo/Desktop/Project/cs370team.github.io/push.sh"
 
 def run():
