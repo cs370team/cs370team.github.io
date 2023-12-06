@@ -58,4 +58,3 @@ def update_html():
         site.write(tag("p", f"Current Moisture Content: {current_moisture}"))
         site.write(tag("p", f"Suggested Action: {action}"))
 
-update_html()
