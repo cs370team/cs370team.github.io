@@ -35,7 +35,7 @@ def tag(tag, text="", options=""):
     return f"<{tag} {options}>"+text+f"</{tag}>"
 
 def get_suggested_action(current_moisture): #TODO make this dynamic
-    #moisture_notification() #For the demo
+    moisture_notification() #For the demo
     if (current_moisture == 'low'):
         moisture_notification()
         return " The Plant/Lawn Needs Watering"
