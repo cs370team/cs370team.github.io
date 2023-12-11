@@ -12,7 +12,7 @@ def get_moisture_data():
     X = [datetime.datetime.fromtimestamp(float(row[0])) for row in data[-346:]]
     y = [1 - (int(row[1]) + int(row[2])) / 2.0 for row in data]
 
-    fig = plt.figure(figsize=(6, 6))
+    fig = plt.figure(figsize=(10, 4))
     fig.gca().yaxis.set(ticks=[-0.5, 0, 0.5, 1, 1.5])
 
     plt.scatter(X,y, alpha=0.5)
