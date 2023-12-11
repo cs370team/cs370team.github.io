@@ -35,14 +35,14 @@ def tag(tag, text="", options=""):
     return f"<{tag} {options}>"+text+f"</{tag}>"
 
 def get_suggested_action(current_moisture): #TODO make this dynamic
-    moisture_notification() #For the demo
+    #moisture_notification() #For the demo
     if (current_moisture == 'low'):
         moisture_notification()
         return " The Plant/Lawn Needs Watering"
     elif (current_moisture == 'optimal'):
-        return " Water if the Temperature is 80-Degrees Farenheit or More (\Outside Plants or Lawn Only)\."
+        return " Water if the temperature is 80-Degrees Farenheit or More (Outside Plants or Lawn Only)."
     elif (current_moisture == 'high'):
-        return " Do not water Lawn/Plants"
+        return " Soil is above optimal levels, do not water."
 
 def update_html():
     trend_png, current_moisture = get_moisture_data()
