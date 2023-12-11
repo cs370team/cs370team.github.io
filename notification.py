@@ -70,7 +70,7 @@ def lawn_notification():
     last_notification_date = read_last_notification(file_path)
     email_content = f"{LAWN_REMINDER}\n{LINK_TO_SITE}\n\n" + "\n".join(ARTICLE_LIST)
 
-    send_notification(email_content) # For the Demo
+    #send_notification(email_content) # For the Demo
     if ((datetime.datetime.now() - last_notification_date) >= datetime.timedelta(weeks=1)):
         send_notification(email_content)
         write_last_notification_date(file_path, datetime.datetime.now())
