@@ -15,7 +15,7 @@ def get_moisture_data():
     fig = plt.figure(figsize=(10, 4))
     fig.gca().yaxis.set(ticks=[-0.5, 0, 0.5, 1, 1.5])
 
-    plt.scatter(X,y, alpha=0.5)
+    plt.scatter(X,y, alpha=0.005)
 
     plt.plot(X, [0.75] * len(X), "--b")
     plt.plot(X, [0.25] * len(X), '--r')
@@ -25,7 +25,7 @@ def get_moisture_data():
     plt.ylim((-0.25, 1.25))
     plt.gca().set_yticklabels(["Too-Dry" if y == 0 else ("Optimal" if y == 0.5 else ("Too-Wet" if y == 1 else "")) for y in current_values])
     plt.gcf().autofmt_xdate()
-    plt.subplots_adjust(bottom=.5)
+    plt.subplots_adjust(bottom=.005)
 
     plt.savefig('moisture-trend.png')
     current_moisture = ("low", "optimal", 'high')[int(2 * y[-1])]
