@@ -42,7 +42,7 @@ def get_suggested_action(current_moisture): #TODO make this dynamic
         moisture_notification()
         return " The Plant/Lawn Needs Watering"
     elif (current_moisture == 'optimal'):
-        return " Water if the temperature is 80-Degrees Farenheit or More (Outside Plants or Lawn Only)."
+        return " Lightly water if the temperature is 80-Degrees Farenheit or More (Outside Plants or Lawn Only)."
     elif (current_moisture == 'high'):
         return " Soil is above optimal levels, do not water."
 
